@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Fleet
+    class Herd
     {
-        List<Robot> robots;
+        List<Dino> dinos;
 
-        Robot robo1;
-        Robot robo2;
-        Robot robo3;
+        Dino dino1;
+        Dino dino2;
+        Dino dino3;
 
-        public Fleet(List<Robot> robots)
+        Random random = new Random();
+        int atkPower;
+        public Herd(List<Dino> dinos)
         {
 
         }
@@ -22,17 +24,16 @@ namespace RobotsVsDinosaurs
         {
             Console.WriteLine("Which Robot would you like on your Battlefield? Please pick 3");
 
-            //robo1 = new Robot("Wall-E", 100, 50, "compression", 5);
-            //robots.Add(robo1);
-            //robo2 = new Robot("Eva", 100, 50, "lasers", 10);
+            atkPower = random.Next(1, 12);
+
+            //dino1 = new Dino("T-Rex", 100, 50, atkPower);
+            //dinos.Add(dino1);
+            //dinos2 = new Robot("Eva", 100, 50, "lasers", 10);
             //robots.Add(robo2);
             //robo3 = new Robot("Drone", 100, 20, "drops bombs", 15);
             //robots.Add(robo3);
 
         }
-        
-
 
     }
 }
-
