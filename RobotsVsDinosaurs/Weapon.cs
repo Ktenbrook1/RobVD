@@ -10,12 +10,11 @@ namespace RobotsVsDinosaurs
     {
         //might want to move this up but will leave for now
         Random random = new Random();
-        string type;
         public int attackPower;
 
-        public Weapon(string type)
+        public Weapon()
         {
-            this.type = type;
+            List<string> type = new List<string>() {"Guns", "Lasers", "Extracto Arms", "Shocks" };
             this.attackPower = random.Next(1, 12);            
         }
     }
