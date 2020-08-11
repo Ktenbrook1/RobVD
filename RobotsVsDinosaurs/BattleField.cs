@@ -68,17 +68,17 @@ namespace RobotsVsDinosaurs
            
             if (userInput == "robo1")
             {
-                Robot robo1 = new Robot("Wall-E", new Weapon());
+                Robot robo1 = new Robot("Wall-E");
                 robots.Add(robo1);
             }
             else if (userInput == "robo2")
             {
-                Robot robo2 = new Robot("Eva", new Weapon());
+                Robot robo2 = new Robot("Eva");
                 robots.Add(robo2);
             }
             else
             {
-                Robot robo3 = new Robot("Drone", new Weapon());
+                Robot robo3 = new Robot("Drone");
                 robots.Add(robo3);
             }
         }

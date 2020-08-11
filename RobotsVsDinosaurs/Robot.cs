@@ -13,16 +13,28 @@ namespace RobotsVsDinosaurs
         string nameOfRobo;
         public int roboHealth;
         int power;
+        public string robotWeapon;
 
         public Weapon weapon;
-
-
-        public Robot(string nameOfRobo, Weapon weapon)
+        List<Weapon> weapons;
+        public Robot(string nameOfRobo)
         {
             this.nameOfRobo = nameOfRobo;
             roboHealth = 100;
             power = 100;
-            this.weapon = weapon;
+            robotWeapon = randomWeapon();
+            weapon = new Weapon();
+        }
+        public string randomWeapon()
+        {
+            List<string> type = new List<string>() { "Guns", "Lasers", "Extracto Arms", "Shocks" };
+            Random random = new Random();
+            int index = random.Next(type.Count);
+
+            string robotWeapon = type[index];
+            // return random weapon 
+            return robotWeapon;
+
         }
 
         public void attack(List<Dino> dinos)
