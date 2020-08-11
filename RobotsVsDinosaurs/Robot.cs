@@ -28,13 +28,14 @@ namespace RobotsVsDinosaurs
         public void attack(List<Dino> dinos)
         {
             //able to attack a dino!
-            int newHealthOfDino = roboHealth - weapon.attackPower;
-            weapon.attackPower = roboHealth;
+            int newHealthOfDino = dinos[0].health - weapon.attackPower;
+            dinos[0].health = newHealthOfDino;
+            Console.WriteLine("Dinos health is now {0}", dinos[0].health);
         }
-        public void beingAttacked(int health)
+        public void beingAttacked(int health, List<Dino> dinos, List<Robot> robots)
         {
             //get attcked by the dinos!
-            if (roboHealth > 0)
+            if (roboHealth > 0 && dinos.Count > 0)
             {
                 //run the dino attacking if health is greater than zero
                 attack(dinos);
@@ -42,7 +43,7 @@ namespace RobotsVsDinosaurs
             else
             {
                 Console.WriteLine("Robot has died");
-                dinos.RemoveAt(0);
+                robots.RemoveAt(0);
             }
         }
     }

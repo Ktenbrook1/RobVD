@@ -10,7 +10,7 @@ namespace RobotsVsDinosaurs
     {
         List<Robot> robots;
         string nameOfDino;
-        int health;
+        public int health;
         int energy;
         int attcPower;
         public int newHealthOfRobot;
@@ -28,11 +28,13 @@ namespace RobotsVsDinosaurs
             //needs to access the robots health
             int newHealthOfRobot = robots[0].roboHealth - attcPower;
             robots[0].roboHealth = newHealthOfRobot;
+            Console.WriteLine("The Robots health is now {0}", robots[0].roboHealth);
         }
-        public void beingAttacked(int health)
+        public void beingAttacked(int health, List<Robot> robots, List<Dino> dinos)
         {
             //get attcked by the robots!
-            if(health > 0)
+            //know what to do it the other character dies
+            if(health > 0 && robots.Count > 0)
             {
                 //run the dino attacking if health is greater than zero
                 attack(robots);
@@ -40,7 +42,7 @@ namespace RobotsVsDinosaurs
             else
             {
                 Console.WriteLine("Dino has died");
-                robots.RemoveAt(0);
+                dinos.RemoveAt(0);
             }
         }
     }
