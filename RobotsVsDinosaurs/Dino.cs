@@ -27,7 +27,7 @@ namespace RobotsVsDinosaurs
             //able to attack a single robot!
             //needs to access the robots health
             int newHealthOfRobot = robots[0].roboHealth - attcPower;
-            newHealthOfRobot = robots[0].roboHealth;
+            robots[0].roboHealth = newHealthOfRobot;
         }
         public void beingAttacked(int health)
         {
@@ -40,6 +40,7 @@ namespace RobotsVsDinosaurs
             else
             {
                 Console.WriteLine("Dino has died");
+                robots.RemoveAt(0);
             }
         }
     }

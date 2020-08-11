@@ -16,9 +16,7 @@ namespace RobotsVsDinosaurs
         public BattleField()
         {
             List<Robot> robots = new List<Robot>();
-            //Robot robo1;
-            //Robot robo2;
-            //Robot robo3;
+
             
             ResultOfRobots(robots);
             fleet = new Fleet(robots);
@@ -26,8 +24,9 @@ namespace RobotsVsDinosaurs
         public void ResultOfRobots(List<Robot> robots)
         {
             Console.WriteLine("Which Robot would you like on your Battlefield? Please pick 3");
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i <= 2; i++)
             {
+
                 Console.WriteLine("Robo1");
                 Console.WriteLine("Robo2");
                 Console.WriteLine("Robo3");

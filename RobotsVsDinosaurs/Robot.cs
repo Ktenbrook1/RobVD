@@ -8,6 +8,8 @@ namespace RobotsVsDinosaurs
 {
     class Robot
     {
+        List<Dino> dinos;
+
         string nameOfRobo;
         public int roboHealth;
         int power;
@@ -23,15 +25,25 @@ namespace RobotsVsDinosaurs
             this.weapon = weapon;
         }
 
-        public void attack()
+        public void attack(List<Dino> dinos)
         {
-            int newHealthOfDino = weapon.attackPower;
-
             //able to attack a dino!
+            int newHealthOfDino = roboHealth - weapon.attackPower;
+            weapon.attackPower = roboHealth;
         }
         public void beingAttacked(int health)
         {
             //get attcked by the dinos!
+            if (roboHealth > 0)
+            {
+                //run the dino attacking if health is greater than zero
+                attack(dinos);
+            }
+            else
+            {
+                Console.WriteLine("Robot has died");
+                dinos.RemoveAt(0);
+            }
         }
     }
 }
