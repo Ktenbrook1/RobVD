@@ -8,7 +8,8 @@ namespace RobotsVsDinosaurs
 {
     class Weapon
     {
-        Random random = new Random(87654);
+        //might want to move this up but will leave for now
+        Random random = new Random();
         string type;
         public int attackPower;
 

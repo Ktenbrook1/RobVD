@@ -13,26 +13,18 @@ namespace RobotsVsDinosaurs
         Dino dino1;
         Dino dino2;
         Dino dino3;
-
-        Random random = new Random();
-        int atkPower;
         public Herd(List<Dino> dinos)
         {
-
+            this.dinos = dinos;
         }
         public void ResultOfRobots()
         {
-            Console.WriteLine("Which Robot would you like on your Battlefield? Please pick 3");
-
-            atkPower = random.Next(1, 12);
-
-            //dino1 = new Dino("T-Rex", 100, 50, atkPower);
-            //dinos.Add(dino1);
-            //dinos2 = new Robot("Eva", 100, 50, "lasers", 10);
-            //robots.Add(robo2);
-            //robo3 = new Robot("Drone", 100, 20, "drops bombs", 15);
-            //robots.Add(robo3);
-
+            dino1 = new Dino("T-Rex", 10);
+            dinos.Add(dino1);
+            dino2 = new Dino("X-Rex", 10);
+            dinos.Add(dino2);
+            dino3 = new Dino("Z-Rex", 10);
+            dinos.Add(dino3);
         }
 
     }
