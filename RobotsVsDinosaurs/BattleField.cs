@@ -86,17 +86,17 @@ namespace RobotsVsDinosaurs
         { 
             if (userInput == "dino1")
             {
-                Dino dino1 = new Dino("T-Rex", 10);
+                Dino dino1 = new Dino("T-Rex");
                 dinos.Add(dino1);
             }
             else if (userInput == "dino2")
             {
-                Dino dino2 = new Dino("X-Rex", 10);
+                Dino dino2 = new Dino("X-Rex");
                 dinos.Add(dino2);
             }
             else
             {
-                Dino dino3 = new Dino("Z-Rex", 10);
+                Dino dino3 = new Dino("Z-Rex");
                 dinos.Add(dino3);
             }
         }

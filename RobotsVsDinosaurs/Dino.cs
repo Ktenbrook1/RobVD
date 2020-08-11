@@ -14,14 +14,21 @@ namespace RobotsVsDinosaurs
         int energy;
         int attcPower;
         public int newHealthOfRobot;
-        public Dino(string nameOfDino, int attcPower)
+        public Dino(string nameOfDino)
         {
             this.nameOfDino = nameOfDino;
             health = 100;
             energy = 100;
-            this.attcPower = attcPower;
+            attcPower = attackType();
         }
+        public int attackType()
+        {
+            int[] dinoAttack = {10,15,22,17};
+            Random random = new Random();
 
+            int index = random.Next(dinoAttack.Length);
+            return index;
+        }
         public void attack(List<Robot> robots)
         {
             //able to attack a single robot!

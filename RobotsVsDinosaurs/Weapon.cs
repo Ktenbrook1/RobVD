@@ -15,7 +15,7 @@ namespace RobotsVsDinosaurs
         public Weapon()
         {
             List<string> type = new List<string>() {"Guns", "Lasers", "Extracto Arms", "Shocks" };
-            this.attackPower = random.Next(1, 12);            
+            this.attackPower = random.Next(10, 25);            
         }
     }
 }
