@@ -35,28 +35,27 @@ namespace RobotsVsDinosaurs
                 {
                     Console.WriteLine("Pick another");
                 }
-                Console.WriteLine("Robo1");
-                Console.WriteLine("Robo2");
-                Console.WriteLine("Robo3");
+                Console.WriteLine("WallE");
+                Console.WriteLine("Eva");
+                Console.WriteLine("Drone");
                 Console.WriteLine();
                 string userInput = Console.ReadLine().ToLower();
                 UserInput(userInput, robots);
             }
-            
+
         }
         public void ResultOfDinos(List<Dino> dinos)
         {
             Console.WriteLine("Which Dino would you like on your Herd? Please pick 3");
             for (int i = 0; i <= 2; i++)
             {
-                if(i > 0)
+                if (i > 0)
                 {
                     Console.WriteLine("Pick another");
                 }
-                
-                Console.WriteLine("Dino1");
-                Console.WriteLine("Dino2");
-                Console.WriteLine("Dino3");
+                Console.WriteLine("TRex");
+                Console.WriteLine("XRex");
+                Console.WriteLine("ZRex");
                 Console.WriteLine();
                 string userInput = Console.ReadLine().ToLower();
                 UserInput2(userInput, dinos);
@@ -65,13 +64,13 @@ namespace RobotsVsDinosaurs
         }
         public void UserInput(string userInput, List<Robot> robots)
         {
-           
-            if (userInput == "robo1")
+
+            if (userInput == "walle")
             {
                 Robot robo1 = new Robot("Wall-E");
                 robots.Add(robo1);
             }
-            else if (userInput == "robo2")
+            else if (userInput == "eva")
             {
                 Robot robo2 = new Robot("Eva");
                 robots.Add(robo2);
@@ -83,13 +82,13 @@ namespace RobotsVsDinosaurs
             }
         }
         public void UserInput2(string userInput, List<Dino> dinos)
-        { 
-            if (userInput == "dino1")
+        {
+            if (userInput == "trex")
             {
                 Dino dino1 = new Dino("T-Rex");
                 dinos.Add(dino1);
             }
-            else if (userInput == "dino2")
+            else if (userInput == "xrex")
             {
                 Dino dino2 = new Dino("X-Rex");
                 dinos.Add(dino2);
@@ -108,16 +107,7 @@ namespace RobotsVsDinosaurs
                 dinos[0].beingAttacked(dinos[0].health, robots, dinos);
                 robots[0].beingAttacked(robots[0].roboHealth, dinos, robots);
             } while (dinos.Count > 0 && robots.Count > 0);
-            if(dinos.Count() > 0)
-            {
-                Console.WriteLine("Dinos Win!!");
-                Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("Robots Win!!");
-                Console.ReadLine();
-            }
+            Console.ReadLine();
         }
     }
 }

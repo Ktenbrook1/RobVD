@@ -9,47 +9,61 @@ namespace RobotsVsDinosaurs
     class Dino
     {
         List<Robot> robots;
-        string nameOfDino;
+        public string nameOfDino;
         public int health;
         int energy;
-        int attcPower;
+        int dinoPower;
+
         public int newHealthOfRobot;
         public Dino(string nameOfDino)
         {
             this.nameOfDino = nameOfDino;
             health = 100;
             energy = 100;
-            attcPower = attackType();
+            dinoPower = attackType();
         }
         public int attackType()
         {
-            int[] dinoAttack = {10,15,22,17};
+            int[] dinoAttack = { 10, 15, 22, 17 };
             Random random = new Random();
 
             int index = random.Next(dinoAttack.Length);
-            return index;
+            int dinoPower = dinoAttack[index];
+            return dinoPower;
         }
-        public void attack(List<Robot> robots)
+        public void attack(List<Robot> robots, List<Dino> dinos)
         {
             //able to attack a single robot!
             //needs to access the robots health
-            int newHealthOfRobot = robots[0].roboHealth - attcPower;
+            int newHealthOfRobot = robots[0].roboHealth - dinos[0].dinoPower;
             robots[0].roboHealth = newHealthOfRobot;
-            Console.WriteLine("The Robots health is now {0}", robots[0].roboHealth);
+            if(robots[0].roboHealth > 0)
+            {
+                Console.WriteLine("The Robot, {0}, health is now {1}",robots[0].nameOfRobo, robots[0].roboHealth);
+            }
+            else
+            {
+                Console.WriteLine("The Robot, {0}, health is 0", robots[0].nameOfRobo);
+            }
+            
         }
         public void beingAttacked(int health, List<Robot> robots, List<Dino> dinos)
         {
             //get attcked by the robots!
             //know what to do it the other character dies
-            if(health > 0 && robots.Count > 0)
+            if (health > 0 && robots.Count > 0)
             {
                 //run the dino attacking if health is greater than zero
-                attack(robots);
+                attack(robots, dinos);
+            }
+            else if(health <0)
+            {
+                Console.WriteLine("Dino has died\n\n");
+                dinos.RemoveAt(0);
             }
             else
             {
-                Console.WriteLine("Dino has died");
-                dinos.RemoveAt(0);
+                Console.WriteLine("Dinos Win!");
             }
         }
     }
