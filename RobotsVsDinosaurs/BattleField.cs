@@ -29,15 +29,16 @@ namespace RobotsVsDinosaurs
         public void ResultOfRobots(List<Robot> robots)
         {
             Console.WriteLine("Which Robot would you like on your Battlefield? Please pick 3");
+            Console.WriteLine("WallE");
+            Console.WriteLine("Eva");
+            Console.WriteLine("Drone");
             for (int i = 0; i <= 2; i++)
             {
                 if (i > 0)
                 {
                     Console.WriteLine("Pick another");
                 }
-                Console.WriteLine("WallE");
-                Console.WriteLine("Eva");
-                Console.WriteLine("Drone");
+               
                 Console.WriteLine();
                 string userInput = Console.ReadLine().ToLower();
                 UserInput(userInput, robots);
@@ -47,15 +48,16 @@ namespace RobotsVsDinosaurs
         public void ResultOfDinos(List<Dino> dinos)
         {
             Console.WriteLine("Which Dino would you like on your Herd? Please pick 3");
+            Console.WriteLine("TRex");
+            Console.WriteLine("XRex");
+            Console.WriteLine("ZRex");
             for (int i = 0; i <= 2; i++)
             {
                 if (i > 0)
                 {
                     Console.WriteLine("Pick another");
                 }
-                Console.WriteLine("TRex");
-                Console.WriteLine("XRex");
-                Console.WriteLine("ZRex");
+                
                 Console.WriteLine();
                 string userInput = Console.ReadLine().ToLower();
                 UserInput2(userInput, dinos);
@@ -107,6 +109,14 @@ namespace RobotsVsDinosaurs
                 dinos[0].beingAttacked(dinos[0].health, robots, dinos);
                 robots[0].beingAttacked(robots[0].roboHealth, dinos, robots);
             } while (dinos.Count > 0 && robots.Count > 0);
+            if(dinos.Count > 0)
+            {
+                Console.WriteLine("Dinos Win!");
+            }
+            else
+            {
+                Console.WriteLine("Robots Win!");
+            }
             Console.ReadLine();
         }
     }

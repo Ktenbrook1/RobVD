@@ -60,9 +60,9 @@ namespace RobotsVsDinosaurs
                 //run the dino attacking if health is greater than zero
                 attack(dinos);
             }
-            else if(roboHealth < 0)
+            else if(roboHealth <= 0)
             {
-                Console.WriteLine("Robot has died\n\n");
+                Console.WriteLine("{0} has died\n\n", robots[0].nameOfRobo );
                 robots.RemoveAt(0);
             }
             else
